@@ -1,1 +1,10 @@
-#+TITLE: Dotfiles
+* Dotfiles
+My dotfiles, just because.
+
+** Installation
+To install on a *nix system run
+#+BEGIN_SRC sh
+
+  sh install.sh
+
+#+END_SRC
