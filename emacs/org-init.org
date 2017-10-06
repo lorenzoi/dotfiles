@@ -21,6 +21,15 @@ Which Key shows all of the completions of M-x Functions
 
 #+END_SRC
     
+*** Markdown
+Just incase Org-Mode desided to be a bitch one day.
+   #+BEGIN_SRC emacs-lisp
+        
+     (use-package markdown-mode
+       :ensure t)
+
+   #+END_SRC
+
 ** Org
 *** Org-Bullets
 Asteriks are Ugly
@@ -32,6 +41,7 @@ Asteriks are Ugly
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 #+END_SRC
+
 * Theme
 Pretty Colors
 #+BEGIN_SRC emacs-lisp
@@ -40,3 +50,4 @@ Pretty Colors
       :ensure t)
 
 #+END_SRC
+
