@@ -12,6 +12,25 @@ Which Key shows all of the completions of M-x Functions
 
 #+END_SRC
  
+*** Magit
+#+BEGIN_SRC emacs-lisp
+
+  ;; With Editor
+
+  (use-package with-editor
+    :ensure t)
+
+  ;; Magit in its full glory
+
+  (use-package magit
+    :ensure t)
+
+  ;; Custom Defined Keyboard Shortcuts
+
+  (global-set-key (kbd "C-x g") 'magit-status)
+
+#+END_SRC
+
 ** Syntax
 *** Rust
 #+BEGIN_SRC emacs-lisp
