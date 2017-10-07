@@ -25,10 +25,6 @@ Which Key shows all of the completions of M-x Functions
   (use-package magit
     :ensure t)
 
-  ;; Custom Defined Keyboard Shortcuts
-
-  (global-set-key (kbd "C-x g") 'magit-status)
-
 #+END_SRC
 
 ** Syntax
@@ -68,5 +64,14 @@ Pretty Colors
   (use-package monokai-theme
       :ensure t)
 
+#+END_SRC
+
+* Keyboard Shortcuts
+#+BEGIN_SRC emacs-lisp
+  ;; Global
+  (global-set-key (kbd "C-M-x") 'compile)
+
+  ;; Magit
+  (global-set-key (kbd "C-x g") 'magit-status)
 #+END_SRC
 
