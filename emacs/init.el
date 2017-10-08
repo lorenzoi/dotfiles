@@ -30,4 +30,5 @@
   (package-install 'use-package))
 
 ;; Org Init
-(org-babel-load-file org-init-file)
+(org-babel-load-file
+ (expand-file-name org-init-file user-emacs-directory))
