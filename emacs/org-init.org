@@ -40,8 +40,8 @@ Which Key shows all of the completions of M-x Functions
 Just incase Org-Mode desided to be a bitch one day.
    #+BEGIN_SRC emacs-lisp
         
-     (use-package markdown-mode
-       :ensure t)
+(use-package markdown-mode
+   :ensure t)
 
    #+END_SRC
 
@@ -63,6 +63,17 @@ Pretty Colors
 
   (use-package monokai-theme
       :ensure t)
+
+#+END_SRC
+
+* Keyboard Shortcuts
+#+BEGIN_SRC emacs-lisp
+  
+  ;; Global
+  (global-set-key (kbd "C-M-x") 'compile)
+
+  ;; Magit
+  (global-set-key (kbd "C-x g") 'magit-status)
 
 #+END_SRC
 

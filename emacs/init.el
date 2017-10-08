@@ -30,13 +30,4 @@
   (package-install 'use-package))
 
 ;; Org Init
-(org-babel-load-file
- (expand-file-name org-init-file
-		   user-emacs-directory))
-
-;;; Keyboard Shortcuts
-;; Global
-(global-set-key (kbd "C-M-x") 'compile)
-
-;; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
+(org-babel-load-file org-init-file)
