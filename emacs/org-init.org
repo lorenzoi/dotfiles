@@ -1,4 +1,5 @@
 #+TITLE: Emacs Init
+#+STARTUP: showall
 
 * Plugins
 ** Productivity
