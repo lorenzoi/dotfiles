@@ -28,6 +28,20 @@ Which Key shows all of the completions of M-x Functions
 
 #+END_SRC
 
+*** Company Mode
+Company mode is an auto completion mode for Emacs.
+#+BEGIN_SRC emacs-lisp
+
+  (use-package company
+    :ensure t)
+  (add-hook 'after-init-hook 'global-company-mode)
+
+  ;; Custom Backends
+  (use-package company-c-headers
+    :ensure t)
+  (add-hook 'company-backends 'company-c-headers)
+#+END_SRC
+
 ** Syntax
 *** Rust
 #+BEGIN_SRC emacs-lisp
@@ -69,12 +83,15 @@ Pretty Colors
 
 * Keyboard Shortcuts
 #+BEGIN_SRC emacs-lisp
-  
+
   ;; Global
   (global-set-key (kbd "C-M-x") 'compile)
 
   ;; Magit
   (global-set-key (kbd "C-x g") 'magit-status)
+
+  ;; Company Mode
+  (global-set-key (kbd "C-M-c") 'company-complete)
 
 #+END_SRC
 
