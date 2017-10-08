@@ -42,6 +42,18 @@ Company mode is an auto completion mode for Emacs.
   (add-hook 'company-backends 'company-c-headers)
 #+END_SRC
 
+*** Ido
+Ido comes preinstalled with Emacs, just not enabled
+#+BEGIN_SRC emacs-lisp
+
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)
+  (ido-mode 1)
+
+  (defalias 'list-buffers 'ibuffer)
+
+#+END_SRC
+
 ** Syntax
 *** Rust
 #+BEGIN_SRC emacs-lisp
