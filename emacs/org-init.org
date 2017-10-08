@@ -83,13 +83,37 @@ Asteriks are Ugly
 
 #+END_SRC
 
+*** Todo List Things
+#+BEGIN_SRC emacs-lisp
+
+  ;; Add log when TODO is set to DONE
+  (setq org-log-done 'time)
+
+  ;; TODO states
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "|" "DONE(d!)")
+          (sequence "REPORT(r)" "BUG(b)" "FIX(f@)" "|" "FIXED(F!)")
+          (sequence "|" "CANCELED(c@)")))
+
+  (setq org-todo-keyword-faces
+        '(("TODO" . org-warning)
+          ("DONE" . (:foreground "green" :weight bold))
+          ("REPORT" . org-warning)
+          ("BUG" . org-warning)
+          ("FIX" . org-warning)
+          ("FIXED" . (:foreground "green" :weight bold))
+          ("CANCELED" . (:foreground "red" :weight bold))))
+          
+
+#+END_SRC
+
 *** Other
 #+BEGIN_SRC emacs-lisp
 
   (setq org-src-fontify-natively t)
 
 #+END_SRC
-
+    
 ** Fun
 You have to have alittle fun in your life.
 *** Hacker-Typer
