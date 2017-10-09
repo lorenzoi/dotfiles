@@ -53,6 +53,31 @@ Ido comes preinstalled with Emacs, just not enabled
 
 #+END_SRC
 
+*** God-Mode
+A Toggle-able mode, when in it all keys are prefixed with C-
+#+BEGIN_SRC emacs-lisp
+  ;; God-Mode itself
+
+  (use-package god-mode
+    :ensure t)
+
+  ;; Update Cursor
+  (defun my-update-cursor ()
+    (setq cursor-type (if (or god-local-mode buffer-read-only)
+                          'box
+                        'bar)))
+  (add-hook 'god-mode-enabled-hook 'my-update-cursor)
+  (add-hook 'god-mode-disabled-hook 'my-update-cursor)
+
+  ;; Toggle God-Mode on Overwrite-mode
+  (defun god-toggle-on-overwrite ()
+    (if (bound-and-true-p overwrite-mode)
+        (god-local-mode-pause)
+      (god-local-mode-resume)))
+
+  (add-hook 'overwrite-mode-hook 'god-toggle-on-overwrite)
+#+END_SRC
+
 ** Syntax
 *** Rust
 #+BEGIN_SRC emacs-lisp
@@ -115,7 +140,7 @@ Asteriks are Ugly
 #+END_SRC
     
 ** Fun
-You have to have alittle fun in your life.
+You have to have a little fun in your life.
 *** Hacker-Typer
 #+BEGIN_SRC emacs-lisp
 
@@ -137,7 +162,7 @@ Pretty Colors
 #+BEGIN_SRC emacs-lisp
 
   ;; Global
-  (global-set-key (kbd "C-M-x") 'compile)
+  (global-set-key (kbd "<f8>") 'compile)
 
   ;; Magit
   (global-set-key (kbd "C-x g") 'magit-status)
@@ -145,5 +170,6 @@ Pretty Colors
   ;; Company Mode
   (global-set-key (kbd "C-M-c") 'company-complete)
 
+  ;; God-Mode
+  (global-set-key (kbd "<escape>") 'god-local-mode)
 #+END_SRC
-
