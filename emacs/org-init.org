@@ -96,6 +96,14 @@ Just incase Org-Mode desided to be a bitch one day.
 
    #+END_SRC
 
+*** Bison Mode
+GNU-Bison mode for Lexers
+#+BEGIN_SRC elisp
+
+  (use-package bison-mode
+    :ensure t)
+
+#+END_SRC
 ** Org
 *** Org-Bullets
 Asteriks are Ugly
@@ -140,7 +148,7 @@ Asteriks are Ugly
 #+END_SRC
     
 ** Fun
-You have to have a little fun in your life.
+   You have to have a little fun in your life.
 *** Hacker-Typer
 #+BEGIN_SRC emacs-lisp
 
@@ -148,29 +156,20 @@ You have to have a little fun in your life.
     :ensure t)
 
 #+END_SRC
-
-* Theme
-Pretty Colors
-#+BEGIN_SRC emacs-lisp
-
-  (use-package monokai-theme
-      :ensure t)
-
-#+END_SRC
-
+
 * Keyboard Shortcuts
 #+BEGIN_SRC emacs-lisp
 
   ;; Global
   (global-set-key (kbd "<f8>") 'compile)
 
-  ;; Magit
+  ;;; Magit
   (global-set-key (kbd "C-x g") 'magit-status)
 
-  ;; Company Mode
+  ;;; Company Mode
   (global-set-key (kbd "C-M-c") 'company-complete)
 
-  ;; God-Mode
+  ;;; God-Mode
   (global-set-key (kbd "<escape>") 'god-local-mode)
   (define-key god-local-mode-map (kbd "z") 'repeat)
   (define-key god-local-mode-map (kbd "i") 'god-local-mode)
