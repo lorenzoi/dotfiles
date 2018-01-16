@@ -104,6 +104,17 @@ GNU-Bison mode for Lexers
     :ensure t)
 
 #+END_SRC
+*** Racket Mode
+#+BEGIN_SRC emacs-lisp
+  ;; Racket Mode
+  (use-package racket-mode
+    :ensure t)
+
+  ;; Scribble Mode for HTML processing.
+  (use-package scribble-mode
+    :ensure t)
+
+#+END_SRC
 ** Org
 *** Org-Bullets
 Asteriks are Ugly
