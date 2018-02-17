@@ -32,3 +32,9 @@
 ;; Org Init
 (org-babel-load-file
  (expand-file-name org-init-file user-emacs-directory))
+
+;;; Slime
+;; Slime is a plugin designed to aid with writing lisp code.
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; Replace "sbcl" with the path to your implementation
+(setq inferior-lisp-program "sbcl")
