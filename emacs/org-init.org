@@ -78,6 +78,26 @@ A Toggle-able mode, when in it all keys are prefixed with C-
   (add-hook 'overwrite-mode-hook 'god-toggle-on-overwrite)
 #+END_SRC
 
+*** Smex
+Ido Mode for M-x
+#+BEGIN_SRC emacs-lisp
+  (use-package smex
+    :ensure t)
+
+  (smex-initialize)
+
+#+END_SRC
+
+*** Dashboard
+Scratch is boring
+#+BEGIN_SRC emacs-lisp
+
+  (use-package dashboard
+    :ensure t
+    :config
+    (dashboard-setup-startup-hook))
+
+#+END_SRC
 ** Syntax
 *** Rust
 #+BEGIN_SRC emacs-lisp
@@ -119,6 +139,9 @@ GNU-Bison mode for Lexers
 Markdown but better.
 #+BEGIN_SRC emacs-lisp
 
+  (use-package polymode
+    :ensure t)
+
   (defun rmd-mode ()
     "ESS Markdown mode for rmd files"
     (interactive)
@@ -128,7 +151,7 @@ Markdown but better.
     (poly-markdown+r-mode))
 
   ;; Need to set .rmd files = rmd-mode
-  (setq auto-mode-alist (append '(("\\.rmdp$" . rmd-mode))
+  (setq auto-mode-alist (append '(("\\.rmd$" . rmd-mode))
         auto-mode-alist))
 
 #+END_SRC 
@@ -188,7 +211,7 @@ Asteriks are Ugly
 ** Theme
 #+BEGIN_SRC emacs-lisp
 
-  (load-theme 'xresources t t)
+  (load-theme 'xresources t)
 
 #+END_SRC
 * Keyboard Shortcuts
@@ -207,6 +230,9 @@ Asteriks are Ugly
   (global-set-key (kbd "<escape>") 'god-local-mode)
   (define-key god-local-mode-map (kbd "z") 'repeat)
   (define-key god-local-mode-map (kbd "i") 'god-local-mode)
-#+END_SRC
 
-  
+  ;;; Smex-Mode
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+#+END_SRC
