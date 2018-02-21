@@ -188,6 +188,32 @@ Asteriks are Ugly
           ("FIXED" . (:foreground "green" :weight bold))
           ("CANCELED" . (:foreground "red" :weight bold))))
           
+  ;; Agenda Stuff
+
+  (setq org-directory "~/org")
+
+  (defun org-file-path (filename)
+    "Return the absolute address of an org file, given its relative name."
+    (concat (file-name-as-directory org-directory) filename))
+
+  (setq org-index-file (org-file-path "agenda.org"))
+
+  (setq org-archive-location
+        (concat (org-file-path "archive.org") "::* From %s"))
+
+  (setq org-agenda-files (list org-index-file))
+
+  (defun hrs/mark-done-and-archive ()
+    "Mark the state of an org-mode item as DONE and archive it."
+    (interactive)
+    (org-todo 'done)
+    (org-archive-subtree))
+
+  (define-key org-mode-map (kbd "C-c C-x C-s") 'hrs/mark-done-and-archive)
+
+  (setq org-log-done 'time)
+
+  (define-key global-map "\C-ca" 'org-agenda)
 
 #+END_SRC
 
@@ -195,6 +221,7 @@ Asteriks are Ugly
 #+BEGIN_SRC emacs-lisp
 
   (setq org-src-fontify-natively t)
+  (setq org-src-window-setup 'current-window)
 
 #+END_SRC
     
